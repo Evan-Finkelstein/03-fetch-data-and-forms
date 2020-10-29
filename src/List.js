@@ -16,7 +16,19 @@ export default class List extends Component {
             return false
         })
             .sort((a, b) => {
-                if (this.props.sortOrder === 'ascending') {
+                if (this.props.sortType === 'pokebase' && this.props.sortOrder === 'ascending') {
+                    return a.pokebase.localeCompare(b.pokebase)
+                }
+                else if (this.props.sortType === 'pokebase' && this.props.sortOrder === 'descending') {
+                    return b.pokebase.localeCompare(a.pokebase)
+                }
+                else if (this.props.sortType === 'type_1' && this.props.sortOrder === 'ascending') {
+                    return a.type_1.localeCompare(b.type_1)
+                }
+                else if (this.props.sortType === 'type_1' && this.props.sortOrder === 'descending') {
+                    return b.type_1.localeCompare(a.type_1)
+                }
+                else if (this.props.sortOrder === 'ascending') {
                     return a[this.props.sortType] - b[this.props.sortType];
                 } else {
                     return b[this.props.sortType] - a[this.props.sortType];

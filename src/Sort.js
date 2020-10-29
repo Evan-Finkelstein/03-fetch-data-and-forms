@@ -6,12 +6,13 @@ export default class Sort extends Component {
             <div>
 
                 <select onChange={this.props.handleSort}>
-                    {/* <option value=''>Sort By:</option> */}
+                    <option value='pokebase'>name</option>
                     <option value='type_1'>type</option>
                     <option value='attack'>attack</option>
                     <option value='speed'>speed</option>
                     <option value='defense'>defense</option>
                     <option value='hp'>hp</option>
+
 
                 </select>
 
