@@ -5,7 +5,6 @@ import List from './List.js'
 // import Data from './Data.js'
 import Search from './Search.js'
 // import DropDown from './DropDown.js'
-import Sort from './Sort.js'
 import fetch from 'superagent';
 // import Item from './Item.js';
 
@@ -99,7 +98,13 @@ export default class App extends Component {
         {
 
           this.state.data.length === 0
-            ? <div> <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" title='x' allowFullScreen></iframe>
+            ? <div> <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg"
+              width="480"
+              height="480"
+              frameBorder="0"
+              class="giphy-embed"
+              title='x'
+              allowFullScreen></iframe>
               <p><a href="https://giphy.com/gifs/hand-bored-waiting-xTkcEQACH24SMPxIQg">via GIPHY</a></p></div>
             : <List
               data={this.state.data}

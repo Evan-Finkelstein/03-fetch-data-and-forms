@@ -10,7 +10,7 @@ export default class Search extends Component {
                     <option value='defense'>defense</option>
                     <option value='attack'>attack</option>
                     <option value='speed'>speed</option>
-                    <option value='type_1'>defense</option>
+                    <option value='type_1'>type</option>
                     <option value='hp'>hp</option>
 
 
