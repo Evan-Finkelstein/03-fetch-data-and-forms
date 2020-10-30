@@ -6,12 +6,12 @@ export default class Sort extends Component {
             <div>
 
                 <select onChange={this.props.handleSort}>
-                    <option value='pokebase'>name</option>
-                    <option value='type_1'>type</option>
-                    <option value='attack'>attack</option>
-                    <option value='speed'>speed</option>
-                    <option value='defense'>defense</option>
-                    <option value='hp'>hp</option>
+                    <option value=''>name</option>
+                    <option value='sort'>sort</option>
+                    <option value='https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon='>attack</option>
+                    <option value='https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon='>speed</option>
+                    <option value='https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon='>defense</option>
+                    <option value='https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon='>hp</option>
 
 
                 </select>
