@@ -39,7 +39,8 @@ export default class List extends Component {
 
                 {
                     this.props.data.map(pokemon =>
-                        <p> <Item
+                        <p key={pokemon.id}> <Item
+
                             url={pokemon.url_image}
                             name={pokemon.pokemon}
                             color={pokemon.color_1}
