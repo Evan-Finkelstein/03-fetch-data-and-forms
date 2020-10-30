@@ -21,7 +21,20 @@ export default class Search extends Component {
                     <option value='desc'>High to low</option>
 
                 </select>
-
+                {
+                    <button
+                        disabled={this.props.pageNumber === 1}
+                        onClick={this.props.handleDecrement}>
+                        Prev
+            </button>
+                }
+                {
+                    <button
+                        onClick={this.props.handleIncrement}
+                        disabled={this.props.pageNumber === Math.ceil(this.props.count / 20)}>
+                        Next
+            </button>
+                }
 
                 <button onClick={this.props.handleClick} >Search</button>
             </div >
