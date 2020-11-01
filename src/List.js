@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Item from './Item.js'
-
+import { Link } from 'react-router-dom';
 
 export default class List extends Component {
     render() {
@@ -39,17 +39,21 @@ export default class List extends Component {
 
                 {
                     this.props.data.map(pokemon =>
-                        <p key={pokemon.id}> <Item
+                        <Link to={`/pokemon/${pokemon._id}`}>
 
-                            url={pokemon.url_image}
-                            name={pokemon.pokemon}
-                            color={pokemon.color_1}
-                            attack={pokemon.attack}
-                            defense={pokemon.defense}
-                            speed={pokemon.speed}
-                            hp={pokemon.hp}
-                        />
-                        </p>)
+                            <p key={pokemon.id}> <Item
+
+                                url={pokemon.url_image}
+                                name={pokemon.pokemon}
+                                color={pokemon.color_1}
+                                attack={pokemon.attack}
+                                defense={pokemon.defense}
+                                speed={pokemon.speed}
+                                hp={pokemon.hp}
+                            />
+                            </p>
+                        </Link>
+                    )
                 }
             </div>
         )

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Header from './Header.js'
 import Pokedex from './Pokedex.js'
+import Detail from './Detail.js'
 import Home from './Home.js'
 import './App.css';
 export default class App extends Component {
@@ -25,6 +26,11 @@ export default class App extends Component {
                             path="/pokedex"
                             exact
                             render={(routerProps) => <Pokedex {...routerProps} />}
+                        />
+                        <Route
+                            path="/pokemon/:booger"
+                            exact
+                            render={(routerProps) => <Detail {...routerProps} />}
                         />
 
 
