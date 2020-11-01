@@ -19,6 +19,8 @@ export default class App extends Component {
     sortType: '',
     sortOrder: '',
     data: [],
+    pageNumber: 1,
+    count: ''
   }
 
   componentDidMount = async () => {
@@ -37,6 +39,21 @@ export default class App extends Component {
 
     })
 
+  }
+  handleIncrement = async () => {
+    await this.setState({
+      pageNumber: this.state.pageNumber + 1,
+    })
+
+    await this.fetchPokemon();
+  }
+
+  handleDecrement = async () => {
+    await this.setState({
+      pageNumber: this.state.pageNumber - 1,
+    })
+
+    await this.fetchPokemon();
   }
 
   handleSearch = e => {
@@ -59,9 +76,13 @@ export default class App extends Component {
     })
   }
   fetchPokemon = async () => {
-    let response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.text}&sort=${this.state.sortType}&direction=${this.state.sortOrder}&perPage=1500`);
+    let response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.text}&sort=${this.state.sortType}&direction=${this.state.sortOrder}&page=${this.state.pageNumber}&perPage=20`);
 
-    this.setState({ data: response.body.results });
+    this.setState({
+      data: response.body.results,
+
+      count: response.body.count,
+    });
 
   }
 
@@ -75,7 +96,11 @@ export default class App extends Component {
             handleClick={this.handleClick}
             handleSort={this.handleSort}
             handleOrder={this.handleOrder}
-            Text={this.state.text} />
+            Text={this.state.text}
+            handleDecrement={this.handleDecrement}
+            handleIncrement={this.handleIncrement}
+            pageNumber={this.state.pageNumber}
+            count={this.state.count} />
           {/* 
           <DropDown
             Data={this.state.data}
@@ -115,6 +140,6 @@ export default class App extends Component {
         }
       </div>
     )
-  } S
+  }
 }
 
