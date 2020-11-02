@@ -57,12 +57,24 @@ export default class App extends Component {
                         title='x'
                         allowFullScreen></iframe>
                         <p><a href="https://giphy.com/gifs/hand-bored-waiting-xTkcEQACH24SMPxIQg">via GIPHY</a></p></div>
-                    : <div key={this.state.pokemon.id}>
-                        <p>{this.state.pokemon.pokebase}</p>
 
-                        <img src={this.state.pokemon.url_image} alt={this.state.pokemon.pokemon} width="100" height="100" />
+                    :
+                    <section>
+                        <div className='card' key={this.state.pokemon.id}>
+                            <p>{this.state.pokemon.pokebase}</p>
+                            <img src={this.state.pokemon.url_image} alt={this.state.pokemon.pokemon} width="100" height="100" />
+                            <p>Type:{this.state.pokemon.type_1}, {this.state.pokemon.type_2}</p>
 
-                    </div>
+                            <p>Attack: {this.state.pokemon.attack}</p>
+                            <p>Special Attack: {this.state.pokemon.special_attack}</p>
+                            <p>Defense: {this.state.pokemon.defense}</p>
+                            <p>Special Defense: {this.state.pokemon.special_defense}</p>
+                            <p>HP: {this.state.pokemon.hp}</p>
+                            <p>Speed: {this.state.pokemon.speed}</p>
+                            <p>Ability: {this.state.pokemon.ability_1}</p>
+
+                        </div>
+                    </section>
                 }
             </div>
 

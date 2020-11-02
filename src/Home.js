@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 export default class Home extends Component {
     render() {
         return (
-            <div>
-                This is Home Page
+            <div className='home'>
+                <p>
+                    Welcome to the the Pokedex.
+                </p>
             </div>
         )
     }
